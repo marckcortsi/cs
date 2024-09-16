@@ -70,8 +70,16 @@ function generarCamposPeso() {
     const cantidadCajas = parseInt(document.getElementById('cantidadCajas').value);
     const pesosCajasDiv = document.getElementById('pesosCajas');
 
+    console.log('Cantidad de Cajas:', cantidadCajas); // Verificar si la cantidad de cajas se captura correctamente
+
     // Limpiar los campos anteriores
     pesosCajasDiv.innerHTML = '';
+
+    // Validar si la cantidad de cajas es válida
+    if (!cantidadCajas || cantidadCajas < 1) {
+        alert('Por favor, ingresa una cantidad válida de cajas.');
+        return;
+    }
 
     // Generar un campo de peso para cada caja
     for (let i = 1; i <= cantidadCajas; i++) {
@@ -88,6 +96,8 @@ function generarCamposPeso() {
         pesosCajasDiv.appendChild(input);
         pesosCajasDiv.appendChild(document.createElement('br'));
     }
+
+    console.log('Campos de peso generados'); // Confirmar si los campos fueron generados
 }
 
 // Función para calcular el costo logístico
