@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buscador de CP y Calculadora de Logística</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Archivo CSS para el estilo -->
+    <link rel="stylesheet" href="styles.css"> <!-- Archivo CSS con estilos actualizados -->
 </head>
 <body>
     <div class="container">
@@ -22,25 +22,27 @@
         <!-- Mensaje de estado -->
         <div id="statusMessage" class="status-message" style="display: none;"></div>
 
-        <!-- Tabla de resultados -->
-        <table id="resultTable">
-            <thead>
-                <tr>
-                    <th>CP</th>
-                    <th>Plaza</th>
-                    <th>Estado</th>
-                    <th>Municipio</th>
-                    <th>Colonia</th>
-                    <th>Zona</th>
-                    <th>Caja 1 KG</th>
-                    <th>Costo por kilo adicional</th>
-                    <th>Palet</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Resultados de la búsqueda aparecerán aquí -->
-            </tbody>
-        </table>
+        <!-- Tabla de resultados dentro de un contenedor con desplazamiento horizontal -->
+        <div class="table-container">
+            <table id="resultTable">
+                <thead>
+                    <tr>
+                        <th>CP</th>
+                        <th>Plaza</th>
+                        <th>Estado</th>
+                        <th>Municipio</th>
+                        <th>Colonia</th>
+                        <th>Zona</th>
+                        <th>Caja 1 KG</th>
+                        <th>Costo por kilo adicional</th>
+                        <th>Palet</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Resultados de la búsqueda aparecerán aquí -->
+                </tbody>
+            </table>
+        </div>
 
         <!-- Calculadora de logística -->
         <div class="calculator-box">
