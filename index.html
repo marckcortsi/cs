@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador de CP</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Archivo CSS para el estilo -->
+</head>
+<body>
+    <div class="container">
+        <h1>Buscador de Código Postal (CP)</h1>
+        <div class="search-box">
+            <input type="text" id="searchText" placeholder="Ingresa el CP">
+            <button onclick="buscar()">Buscar</button>
+        </div>
+
+        <!-- Loader -->
+        <div id="loader" class="loader" style="display: none;"></div>
+
+        <!-- Mensaje de estado -->
+        <div id="statusMessage" class="status-message" style="display: none;"></div>
+
+        <!-- Tabla de resultados -->
+        <table id="resultTable">
+            <thead>
+                <tr>
+                    <th>CP</th>
+                    <th>Plaza</th>
+                    <th>Estado</th>
+                    <th>Municipio</th>
+                    <th>Colonia</th>
+                    <th>Zona</th>
+                    <th>Caja 1 KG</th>
+                    <th>Costo por kilo adicional</th>
+                    <th>Palet</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Resultados de la búsqueda aparecerán aquí -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <script src="app.js"></script> <!-- Archivo JS con la lógica -->
+</body>
+</html>
