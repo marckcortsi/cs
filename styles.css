@@ -66,11 +66,17 @@ h1 {
     background-color: #e76f41;
 }
 
-/* Estilo de la tabla de resultados */
+/* Contenedor responsivo para la tabla */
+.table-container {
+    width: 100%;
+    overflow-x: auto;  /* Permitir desplazamiento horizontal */
+    margin-top: 20px;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
+    min-width: 800px; /* Asegurar que la tabla tenga un ancho mínimo en pantallas pequeñas */
 }
 
 table thead th {
@@ -189,4 +195,29 @@ table tbody tr td:last-child {
     color: #4d3a3a;
     font-size: 18px;
     font-weight: bold;
+}
+
+/* Media queries para pantallas pequeñas */
+@media (max-width: 768px) {
+    .search-box {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .search-box input[type="text"] {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .search-box button {
+        width: 100%;
+    }
+
+    .calculator-box input {
+        width: 100%;
+    }
+
+    table {
+        min-width: 600px; /* Ajustar el tamaño mínimo en pantallas más pequeñas */
+    }
 }
