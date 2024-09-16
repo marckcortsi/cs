@@ -1,8 +1,8 @@
 /* Estilo general del cuerpo */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #121212; /* Fondo oscuro */
-    color: #b0b0b0; /* Texto claro */
+    background-color: #000000; /* Fondo completamente negro */
+    color: #ffffff; /* Texto claro */
     margin: 0;
     padding: 0;
     line-height: 1.6;
@@ -13,7 +13,7 @@ body {
     max-width: 400px;
     margin: 50px auto;
     padding: 20px;
-    background-color: #1f1f1f; /* Fondo ligeramente más claro */
+    background-color: #1a1a1a; /* Fondo ligeramente más claro para el contenedor */
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5); /* Sombras suaves */
     border-radius: 10px;
 }
@@ -21,7 +21,7 @@ body {
 /* Estilo del título */
 h1 {
     text-align: center;
-    color: #b0b0b0; /* Color de texto claro */
+    color: #ffffff; /* Color del texto */
     font-weight: 600;
     font-size: 1.5rem;
     margin-bottom: 20px;
@@ -39,8 +39,8 @@ h1 {
     padding: 12px;
     width: 100%;
     border: 2px solid #333;
-    background-color: #2e2e2e; /* Fondo oscuro */
-    color: #b0b0b0; /* Texto claro */
+    background-color: #333333; /* Fondo oscuro */
+    color: #ffffff; /* Texto claro */
     border-radius: 8px;
     font-size: 16px;
     outline: none;
@@ -48,32 +48,33 @@ h1 {
 }
 
 .search-box input[type="text"]:focus {
-    border-color: #56b4f8; /* Color azul claro al hacer focus */
+    border-color: #00ff7f; /* Verde claro */
 }
 
 /* Botones */
 .search-box button {
     width: 100%;
     padding: 12px 20px;
-    background-color: #56b4f8; /* Azul claro */
-    color: white;
+    background-color: #00ff7f; /* Verde claro */
+    color: black;
     border: none;
     margin-top: 10px;
     border-radius: 8px;
     font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .search-box button:hover {
-    background-color: #3b92d1;
+    background-color: #00cc66; /* Verde más oscuro en hover */
+    box-shadow: 0px 4px 10px rgba(0, 255, 127, 0.3); /* Sombra suave */
 }
 
 /* Botón de regresar */
 button.regresar {
     width: 100%;
     padding: 12px 20px;
-    background-color: #f44336; /* Rojo */
+    background-color: #ff4d4d; /* Rojo */
     color: white;
     border: none;
     margin-top: 10px;
@@ -84,14 +85,14 @@ button.regresar {
 }
 
 button.regresar:hover {
-    background-color: #d32f2f;
+    background-color: #e60000; /* Rojo oscuro en hover */
 }
 
 /* Loader estilo */
 .loader {
-    border: 6px solid #333;
+    border: 6px solid #333333;
     border-radius: 50%;
-    border-top: 6px solid #56b4f8;
+    border-top: 6px solid #00ff7f; /* Verde claro */
     width: 40px;
     height: 40px;
     animation: spin 1s linear infinite;
@@ -106,14 +107,64 @@ button.regresar:hover {
 /* Mensaje de estado */
 .status-message {
     text-align: center;
-    color: #f44336;
+    color: #ff4d4d;
     font-weight: bold;
     margin-top: 20px;
+}
+
+/* Contenedor responsivo para la tabla */
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+/* Estilo de la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 800px; /* Para evitar que la tabla se rompa en pantallas pequeñas */
+}
+
+table thead th {
+    background-color: #004080; /* Azul oscuro */
+    color: white;
+    padding: 15px 10px;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 5px 5px 0 0;
+}
+
+table tbody td {
+    background-color: #001f3f; /* Azul más oscuro */
+    padding: 12px 10px;
+    text-align: center;
+    border-bottom: 1px solid #004080;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #003366; /* Azul intermedio */
+}
+
+table tbody tr:hover {
+    background-color: #00284d;
+}
+
+table tbody tr td:first-child {
+    border-radius: 0 0 0 5px;
+}
+
+table tbody tr td:last-child {
+    border-radius: 0 0 5px 0;
 }
 
 /* Media queries para pantallas pequeñas */
 @media (max-width: 768px) {
     .container {
         width: 90%;
+    }
+    
+    table {
+        min-width: 600px; /* Para pantallas más pequeñas */
     }
 }
