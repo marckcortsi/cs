@@ -4,15 +4,18 @@ function cargarCSV(callback) {
         .then(response => response.text())
         .then(data => {
             const lines = data.split('\n');
-            const headers = lines[0].split(',').map(header => header.trim()); // Asegurarse de que los encabezados no tengan espacios
+            const headers = lines[0].split(',').map(header => header.trim()); // Limpiar encabezados
+            console.log("Encabezados:", headers); // Ver encabezados del CSV
+
             const results = [];
 
             for (let i = 1; i < lines.length; i++) {
                 const row = lines[i].split(',');
                 const rowData = {};
                 headers.forEach((header, index) => {
-                    rowData[header.trim()] = row[index] ? row[index].trim() : ''; // Asegurarse de que los valores no tengan espacios
+                    rowData[header] = row[index] ? row[index].trim() : ''; // Limpiar valores
                 });
+                console.log("Fila procesada:", rowData); // Ver cada fila procesada
                 results.push(rowData);
             }
             callback(results);
@@ -32,22 +35,16 @@ function buscar() {
         return;
     }
 
-    // Ocultar cualquier mensaje previo de estado
-    document.getElementById('statusMessage').style.display = 'none';
-
-    // Mostrar loader mientras se busca
-    document.getElementById('loader').style.display = 'block';
+    console.log("CP buscado:", searchText); // Ver CP que se está buscando
 
     // Cargar los datos del CSV y buscar el CP
     cargarCSV((data) => {
-        const resultado = data.find(row => row['CP'].trim() === searchText.trim());
+        const resultado = data.find(row => row['CP'].trim() === searchText);
+        console.log("Resultado de búsqueda:", resultado); // Ver resultado de la búsqueda
 
         // Limpiar la tabla de resultados
         const tbody = document.querySelector('#resultTable tbody');
         tbody.innerHTML = '';
-
-        // Ocultar loader después de buscar
-        document.getElementById('loader').style.display = 'none';
 
         if (resultado) {
             const row = `<tr>
