@@ -52,14 +52,14 @@ function buscar() {
         if (resultado) {
             const row = `<tr>
                 <td>${resultado['CP']}</td>
-                <td>${resultado['PLAZA']}</td>
-                <td>${resultado['ESTADO']}</td>
-                <td>${resultado['MUNICIPIO']}</td>
-                <td>${resultado['COLONIA']}</td>
-                <td>${resultado['ZONA']}</td>
-                <td>${resultado['CAJA 1 KG']}</td>
-                <td>${resultado['CONSTO POR KILO ADICIONAL']}</td>
-                <td>${resultado['PALET']}</td>
+                <td>${resultado['Plaza']}</td>
+                <td>${resultado['Estado']}</td>
+                <td>${resultado['Municipio']}</td>
+                <td>${resultado['Colonia']}</td>
+                <td>${resultado['Zona']}</td>
+                <td>${resultado['Caja 1 KG']}</td>
+                <td>${resultado['Costo por kilo adicional']}</td>
+                <td>${resultado['Palet']}</td>
             </tr>`;
             tbody.innerHTML = row;
         } else {
