@@ -1,4 +1,4 @@
-/* Tema oscuro básico */
+/* Estilo general */
 body {
     font-family: Arial, sans-serif;
     background-color: #1e1e1e;
@@ -16,11 +16,13 @@ body {
     border-radius: 8px;
 }
 
+/* Estilo del título */
 h1 {
     text-align: center;
     color: #fff;
 }
 
+/* Estilo de la caja de búsqueda */
 .search-box {
     display: flex;
     justify-content: center;
@@ -51,6 +53,7 @@ button:hover {
     background-color: #555;
 }
 
+/* Estilo de la tabla de resultados */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -79,7 +82,7 @@ tr:hover {
     background-color: #555;
 }
 
-/* Loader estilo */
+/* Estilo del loader */
 .loader {
     border: 6px solid #f3f3f3;
     border-radius: 50%;
@@ -95,4 +98,56 @@ tr:hover {
     100% { transform: rotate(360deg); }
 }
 
-/* Mensaje de estado */
+/* Estilo del mensaje de estado */
+.status-message {
+    text-align: center;
+    color: #f00;
+}
+
+/* Estilo de la calculadora de logística */
+.calculator-box {
+    background-color: #2e2e2e;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.calculator-box h2 {
+    color: #fff;
+}
+
+.calculator-box label {
+    display: block;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.calculator-box input {
+    padding: 10px;
+    margin-bottom: 15px;
+    width: 100%;
+    max-width: 300px;
+    border: 2px solid #444;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+}
+
+.calculator-box button {
+    padding: 10px 20px;
+    background-color: #444;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.calculator-box button:hover {
+    background-color: #555;
+}
+
+.calculator-box p {
+    color: #fff;
+    font-size: 18px;
+}
