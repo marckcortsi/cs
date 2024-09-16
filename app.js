@@ -4,14 +4,14 @@ function cargarCSV(callback) {
         .then(response => response.text())
         .then(data => {
             const lines = data.split('\n');
-            const headers = lines[0].split(',');
+            const headers = lines[0].split(',').map(header => header.trim()); // Asegurarse de que los encabezados no tengan espacios
             const results = [];
 
             for (let i = 1; i < lines.length; i++) {
                 const row = lines[i].split(',');
                 const rowData = {};
                 headers.forEach((header, index) => {
-                    rowData[header.trim()] = row[index] ? row[index].trim() : '';
+                    rowData[header.trim()] = row[index] ? row[index].trim() : ''; // Asegurarse de que los valores no tengan espacios
                 });
                 results.push(rowData);
             }
