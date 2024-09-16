@@ -17,7 +17,11 @@ function cargarCSV(callback) {
             }
             callback(results);
         })
-        .catch(error => console.error('Error al cargar el archivo CSV:', error));
+        .catch(error => {
+            document.getElementById('statusMessage').innerText = 'Error al cargar el archivo CSV';
+            document.getElementById('statusMessage').style.display = 'block';
+            console.error('Error al cargar el archivo CSV:', error);
+        });
 }
 
 // Función para buscar el CP ingresado y mostrar los resultados
@@ -28,13 +32,22 @@ function buscar() {
         return;
     }
 
+    // Ocultar cualquier mensaje previo de estado
+    document.getElementById('statusMessage').style.display = 'none';
+
+    // Mostrar loader mientras se busca
+    document.getElementById('loader').style.display = 'block';
+
     // Cargar los datos del CSV y buscar el CP
     cargarCSV((data) => {
-        const resultado = data.find(row => row['CP'] === searchText);
+        const resultado = data.find(row => row['CP'].trim() === searchText.trim());
 
         // Limpiar la tabla de resultados
         const tbody = document.querySelector('#resultTable tbody');
         tbody.innerHTML = '';
+
+        // Ocultar loader después de buscar
+        document.getElementById('loader').style.display = 'none';
 
         if (resultado) {
             const row = `<tr>
