@@ -65,14 +65,37 @@ function buscar() {
     });
 }
 
+// Función para generar los campos de peso basados en la cantidad de cajas ingresada
+function generarCamposPeso() {
+    const cantidadCajas = parseInt(document.getElementById('cantidadCajas').value);
+    const pesosCajasDiv = document.getElementById('pesosCajas');
+
+    // Limpiar los campos anteriores
+    pesosCajasDiv.innerHTML = '';
+
+    // Generar un campo de peso para cada caja
+    for (let i = 1; i <= cantidadCajas; i++) {
+        const label = document.createElement('label');
+        label.innerText = `Peso de la caja ${i} (KG):`;
+        const input = document.createElement('input');
+        input.type = 'number';
+        input.id = `pesoCaja${i}`;
+        input.placeholder = `Peso de la caja ${i}`;
+        input.min = '0.1';
+        input.step = '0.1';
+
+        pesosCajasDiv.appendChild(label);
+        pesosCajasDiv.appendChild(input);
+        pesosCajasDiv.appendChild(document.createElement('br'));
+    }
+}
+
 // Función para calcular el costo logístico
 function calcularCosto() {
     const cantidadCajas = parseInt(document.getElementById('cantidadCajas').value);
-    const pesoPorCaja = parseFloat(document.getElementById('pesoPorCaja').value);
 
-    // Verificar si los campos están completos y correctos
-    if (!cantidadCajas || !pesoPorCaja) {
-        alert("Por favor, ingrese la cantidad de cajas y el peso por caja.");
+    if (!cantidadCajas) {
+        alert("Por favor, ingrese la cantidad de cajas.");
         return;
     }
 
@@ -90,14 +113,20 @@ function calcularCosto() {
     const precioCaja1KG = parseFloat(caja1KG.replace('$', ''));
     const precioKiloAdicional = parseFloat(costoPorKiloAdicional.replace('$', ''));
 
-    // Inicializar el costo total
     let costoTotal = 0;
 
-    // Calcular el costo para cada caja
-    for (let i = 0; i < cantidadCajas; i++) {
-        if (pesoPorCaja > 1) {
+    // Iterar sobre cada caja para calcular su costo en base a su peso
+    for (let i = 1; i <= cantidadCajas; i++) {
+        const pesoCaja = parseFloat(document.getElementById(`pesoCaja${i}`).value);
+
+        if (!pesoCaja) {
+            alert(`Por favor, ingrese el peso de la caja ${i}.`);
+            return;
+        }
+
+        if (pesoCaja > 1) {
             // Si el peso de la caja es mayor a 1kg, sumar el costo adicional por cada kilo extra
-            const kilosAdicionales = pesoPorCaja - 1;
+            const kilosAdicionales = pesoCaja - 1;
             costoTotal += precioCaja1KG + (kilosAdicionales * precioKiloAdicional);
         } else {
             // Si la caja pesa 1kg o menos, solo se suma el costo base
