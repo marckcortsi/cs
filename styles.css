@@ -1,7 +1,7 @@
 /* Estilo general del cuerpo */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f5f6fa;
+    background-color: #f2f2f2;
     color: #333;
     margin: 0;
     padding: 0;
@@ -21,7 +21,7 @@ body {
 /* Estilo del título */
 h1 {
     text-align: center;
-    color: #333;
+    color: #4d3a3a;
     font-weight: 600;
     font-size: 2rem;
     margin-bottom: 30px;
@@ -37,7 +37,7 @@ h1 {
 .search-box input[type="text"] {
     padding: 12px;
     width: 300px;
-    border: 2px solid #ddd;
+    border: 2px solid #e0ddd5;
     background-color: #f9f9f9;
     color: #333;
     border-radius: 25px;
@@ -47,12 +47,12 @@ h1 {
 }
 
 .search-box input[type="text"]:focus {
-    border-color: #6c63ff;
+    border-color: #ff7f50;
 }
 
 .search-box button {
     padding: 12px 20px;
-    background-color: #6c63ff;
+    background-color: #ff7f50;
     color: white;
     border: none;
     margin-left: 10px;
@@ -63,7 +63,7 @@ h1 {
 }
 
 .search-box button:hover {
-    background-color: #534cbf;
+    background-color: #e76f41;
 }
 
 /* Estilo de la tabla de resultados */
@@ -74,7 +74,7 @@ table {
 }
 
 table thead th {
-    background-color: #6c63ff;
+    background-color: #4d3a3a;
     color: white;
     padding: 15px 10px;
     font-weight: 600;
@@ -86,7 +86,7 @@ table tbody td {
     background-color: #f9f9f9;
     padding: 12px 10px;
     text-align: center;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #e0ddd5;
 }
 
 table tbody tr:nth-child(even) {
@@ -94,7 +94,7 @@ table tbody tr:nth-child(even) {
 }
 
 table tbody tr:hover {
-    background-color: #e9e9ff;
+    background-color: #ffefe5;
 }
 
 table tbody tr td:first-child {
@@ -107,9 +107,9 @@ table tbody tr td:last-child {
 
 /* Loader estilo */
 .loader {
-    border: 6px solid #ddd;
+    border: 6px solid #e0ddd5;
     border-radius: 50%;
-    border-top: 6px solid #6c63ff;
+    border-top: 6px solid #ff7f50;
     width: 40px;
     height: 40px;
     animation: spin 1s linear infinite;
@@ -124,7 +124,7 @@ table tbody tr td:last-child {
 /* Mensaje de estado */
 .status-message {
     text-align: center;
-    color: #e74c3c;
+    color: #c0392b;
     font-weight: bold;
     margin-top: 20px;
 }
@@ -140,14 +140,14 @@ table tbody tr td:last-child {
 }
 
 .calculator-box h2 {
-    color: #333;
+    color: #4d3a3a;
     font-size: 1.8rem;
     margin-bottom: 20px;
 }
 
 .calculator-box label {
     display: block;
-    color: #333;
+    color: #4d3a3a;
     font-weight: 500;
     margin-bottom: 8px;
 }
@@ -156,7 +156,7 @@ table tbody tr td:last-child {
     padding: 10px;
     width: 100%;
     max-width: 350px;
-    border: 2px solid #ddd;
+    border: 2px solid #e0ddd5;
     border-radius: 25px;
     background-color: #f9f9f9;
     color: #333;
@@ -167,12 +167,12 @@ table tbody tr td:last-child {
 }
 
 .calculator-box input:focus {
-    border-color: #6c63ff;
+    border-color: #ff7f50;
 }
 
 .calculator-box button {
     padding: 12px 25px;
-    background-color: #6c63ff;
+    background-color: #ff7f50;
     color: white;
     border: none;
     border-radius: 25px;
@@ -182,11 +182,11 @@ table tbody tr td:last-child {
 }
 
 .calculator-box button:hover {
-    background-color: #534cbf;
+    background-color: #e76f41;
 }
 
 .calculator-box p {
-    color: #333;
+    color: #4d3a3a;
     font-size: 18px;
     font-weight: bold;
 }
