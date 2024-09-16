@@ -1,8 +1,8 @@
 /* Estilo general del cuerpo */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f2f2f2;
-    color: #333;
+    font-family: 'Roboto', sans-serif; /* Cambié a la tipografía Roboto */
+    background-color: #121212; /* Fondo oscuro */
+    color: #f5f5f5; /* Texto claro */
     margin: 0;
     padding: 0;
     line-height: 1.6;
@@ -13,15 +13,15 @@ body {
     max-width: 1000px;
     margin: 50px auto;
     padding: 20px;
-    background-color: #ffffff;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: #1e1e1e; /* Fondo oscuro del contenedor */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3); /* Sombras suaves */
     border-radius: 10px;
 }
 
 /* Estilo del título */
 h1 {
     text-align: center;
-    color: #4d3a3a;
+    color: #f5f5f5;
     font-weight: 600;
     font-size: 2rem;
     margin-bottom: 30px;
@@ -37,9 +37,9 @@ h1 {
 .search-box input[type="text"] {
     padding: 12px;
     width: 300px;
-    border: 2px solid #e0ddd5;
-    background-color: #f9f9f9;
-    color: #333;
+    border: 2px solid #444;
+    background-color: #2e2e2e; /* Fondo oscuro */
+    color: #f5f5f5; /* Texto claro */
     border-radius: 25px;
     font-size: 16px;
     outline: none;
@@ -47,40 +47,41 @@ h1 {
 }
 
 .search-box input[type="text"]:focus {
-    border-color: #ff7f50;
+    border-color: #ff8c00; /* Color de acento naranja */
 }
 
 .search-box button {
     padding: 12px 20px;
-    background-color: #ff7f50;
+    background-color: #ff8c00; /* Botón de acento naranja */
     color: white;
     border: none;
     margin-left: 10px;
     border-radius: 25px;
     font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .search-box button:hover {
-    background-color: #e76f41;
+    background-color: #ff6f00;
+    box-shadow: 0px 4px 10px rgba(255, 140, 0, 0.3); /* Sombra suave en hover */
 }
 
 /* Contenedor responsivo para la tabla */
 .table-container {
     width: 100%;
-    overflow-x: auto;  /* Permitir desplazamiento horizontal */
+    overflow-x: auto;
     margin-top: 20px;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
-    min-width: 800px; /* Asegurar que la tabla tenga un ancho mínimo en pantallas pequeñas */
+    min-width: 800px;
 }
 
 table thead th {
-    background-color: #4d3a3a;
+    background-color: #333;
     color: white;
     padding: 15px 10px;
     font-weight: 600;
@@ -89,18 +90,18 @@ table thead th {
 }
 
 table tbody td {
-    background-color: #f9f9f9;
+    background-color: #2e2e2e;
     padding: 12px 10px;
     text-align: center;
-    border-bottom: 1px solid #e0ddd5;
+    border-bottom: 1px solid #444;
 }
 
 table tbody tr:nth-child(even) {
-    background-color: #f1f1f1;
+    background-color: #3a3a3a;
 }
 
 table tbody tr:hover {
-    background-color: #ffefe5;
+    background-color: #454545;
 }
 
 table tbody tr td:first-child {
@@ -113,9 +114,9 @@ table tbody tr td:last-child {
 
 /* Loader estilo */
 .loader {
-    border: 6px solid #e0ddd5;
+    border: 6px solid #2e2e2e;
     border-radius: 50%;
-    border-top: 6px solid #ff7f50;
+    border-top: 6px solid #ff8c00;
     width: 40px;
     height: 40px;
     animation: spin 1s linear infinite;
@@ -130,30 +131,24 @@ table tbody tr td:last-child {
 /* Mensaje de estado */
 .status-message {
     text-align: center;
-    color: #c0392b;
+    color: #ff6f00;
     font-weight: bold;
     margin-top: 20px;
 }
 
 /* Estilo de la calculadora de logística */
 .calculator-box {
-    background-color: #fafafa;
+    background-color: #2e2e2e;
     padding: 25px;
     border-radius: 10px;
     margin-top: 30px;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
     text-align: center;
-}
-
-.calculator-box h2 {
-    color: #4d3a3a;
-    font-size: 1.8rem;
-    margin-bottom: 20px;
 }
 
 .calculator-box label {
     display: block;
-    color: #4d3a3a;
+    color: #f5f5f5;
     font-weight: 500;
     margin-bottom: 8px;
 }
@@ -162,10 +157,10 @@ table tbody tr td:last-child {
     padding: 10px;
     width: 100%;
     max-width: 350px;
-    border: 2px solid #e0ddd5;
+    border: 2px solid #444;
     border-radius: 25px;
-    background-color: #f9f9f9;
-    color: #333;
+    background-color: #3a3a3a;
+    color: #f5f5f5;
     margin-bottom: 20px;
     font-size: 16px;
     transition: border 0.3s ease;
@@ -173,26 +168,27 @@ table tbody tr td:last-child {
 }
 
 .calculator-box input:focus {
-    border-color: #ff7f50;
+    border-color: #ff8c00;
 }
 
 .calculator-box button {
     padding: 12px 25px;
-    background-color: #ff7f50;
+    background-color: #ff8c00;
     color: white;
     border: none;
     border-radius: 25px;
     font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .calculator-box button:hover {
-    background-color: #e76f41;
+    background-color: #ff6f00;
+    box-shadow: 0px 4px 10px rgba(255, 140, 0, 0.3);
 }
 
 .calculator-box p {
-    color: #4d3a3a;
+    color: #f5f5f5;
     font-size: 18px;
     font-weight: bold;
 }
@@ -218,6 +214,6 @@ table tbody tr td:last-child {
     }
 
     table {
-        min-width: 600px; /* Ajustar el tamaño mínimo en pantallas más pequeñas */
+        min-width: 600px;
     }
 }
