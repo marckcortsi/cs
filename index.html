@@ -4,16 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de Costos Logísticos</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Archivo CSS con estilos actualizados -->
+    <link rel="stylesheet" href="styles.css"> <!-- Archivo CSS con animaciones -->
 </head>
 <body>
     <div class="container">
-        <h1>Calculadora de Costos Logísticos</h1>
+        <h1>Registro de Series</h1>
         
         <!-- Buscador de CP -->
         <div class="search-box">
-            <input type="text" id="searchText" placeholder="Ingresa el CP">
-            <button onclick="buscar()">Buscar</button>
+            <label for="codigoProducto" style="color: #b0b0b0;">Ingresar código de producto</label>
+            <input type="text" id="codigoProducto" placeholder="Código de producto">
+            <button onclick="buscar()">Aceptar</button>
+            <button class="regresar">Regresar</button>
         </div>
 
         <!-- Loader -->
@@ -43,24 +45,8 @@
                 </tbody>
             </table>
         </div>
-
-        <!-- Calculadora de logística -->
-        <div class="calculator-box">
-            <label for="cantidadCajas">Cantidad de Cajas:</label>
-            <input type="number" id="cantidadCajas" placeholder="Cantidad de cajas" min="1">
-            <button onclick="generarCamposPeso()">Generar Campos de Peso</button>
-
-            <div id="pesosCajas">
-                <!-- Aquí se generarán los campos de peso para cada caja -->
-            </div>
-
-            <button onclick="calcularCosto()">Calcular Costo</button>
-
-            <p id="costoTotal">Costo total: $0</p>
-        </div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
     <script src="app.js"></script> <!-- Archivo JS con la lógica -->
 </body>
 </html>
