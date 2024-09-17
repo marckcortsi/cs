@@ -50,6 +50,18 @@ body.light-mode .container {
     background-color: #ffffff;
 }
 
+/* Animación de entrada suave */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* Estilo del título */
 h1 {
     text-align: center;
@@ -64,6 +76,126 @@ h1 {
 /* Tema claro para el título */
 body.light-mode h1 {
     color: #333;
+}
+
+/* Estilo de la caja de búsqueda */
+.search-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    animation: fadeIn 1.2s ease-in-out; /* Animación de entrada */
+}
+
+.search-box input[type="text"] {
+    padding: 12px;
+    width: 100%;
+    border: 2px solid #333;
+    background-color: #333333; /* Fondo oscuro */
+    color: #ffffff; /* Texto claro */
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: border 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
+    animation: fadeInUp 1.5s ease-in-out; /* Animación de entrada */
+}
+
+/* Tema claro para el input */
+body.light-mode .search-box input[type="text"] {
+    background-color: #ffffff; /* Fondo claro */
+    color: #333; /* Texto oscuro */
+    border: 2px solid #ccc;
+}
+
+.search-box input[type="text"]:focus {
+    border-color: #004080; /* Azul de la tabla */
+    box-shadow: 0 0 10px #004080; /* Sombra azul animada */
+}
+
+/* Botones */
+.search-box button {
+    width: 100%;
+    padding: 12px 20px;
+    background-color: #004080; /* Azul de la tabla */
+    color: white;
+    border: none;
+    margin-top: 10px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
+    animation: fadeInUp 1.6s ease-in-out; /* Animación de entrada */
+}
+
+.search-box button:hover {
+    background-color: #003366; /* Azul más oscuro en hover */
+    transform: translateY(-3px); /* Efecto de "flotar" */
+    box-shadow: 0px 8px 15px rgba(0, 64, 128, 0.3); /* Sombra azul animada */
+}
+
+/* Botón de regresar */
+button.regresar {
+    width: 100%;
+    padding: 12px 20px;
+    background-color: #ff4d4d; /* Rojo */
+    color: white;
+    border: none;
+    margin-top: 10px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInUp 1.7s ease-in-out;
+}
+
+button.regresar:hover {
+    background-color: #e60000; /* Rojo oscuro en hover */
+    transform: translateY(-3px);
+    box-shadow: 0px 8px 15px rgba(255, 77, 77, 0.3);
+}
+
+/* Loader estilo */
+.loader {
+    border: 6px solid #333333;
+    border-radius: 50%;
+    border-top: 6px solid #004080; /* Azul de la tabla */
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite, fadeInUp 1s ease-in-out; /* Animación de entrada y rotación */
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mensaje de estado */
+.status-message {
+    text-align: center;
+    color: #ff4d4d;
+    font-weight: bold;
+    margin-top: 20px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Contenedor responsivo para la tabla */
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 20px;
+    animation: fadeInUp 1.8s ease-in-out; /* Animación de entrada */
 }
 
 /* Estilo de la tabla */
@@ -198,3 +330,4 @@ body.light-mode .calculator-box button:hover {
         min-width: 600px; /* Para pantallas más pequeñas */
     }
 }
+
