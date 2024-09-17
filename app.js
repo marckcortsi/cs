@@ -134,12 +134,12 @@ function calcularCosto() {
             return;
         }
 
-        if (pesoCaja > 1) {
-            // Si el peso de la caja es mayor a 1kg, sumar el costo adicional por cada kilo extra
-            const kilosAdicionales = pesoCaja - 1;
+        if (pesoCaja > 5) {
+            // Si el peso de la caja es mayor a 5 kg, aplicar costo adicional por cada kilo que exceda los 5 kg
+            const kilosAdicionales = pesoCaja - 5;
             costoTotal += precioCaja1KG + (kilosAdicionales * precioKiloAdicional);
         } else {
-            // Si la caja pesa 1kg o menos, solo se suma el costo base
+            // Si la caja pesa 5 kg o menos, solo se suma el costo base
             costoTotal += precioCaja1KG;
         }
     }
