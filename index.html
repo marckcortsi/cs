@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="styles.css"> <!-- Archivo CSS con estilos actualizados -->
 </head>
 <body>
+    <!-- Botón de cambio de tema día/noche -->
+    <button id="themeToggle" class="theme-toggle" onclick="toggleTheme()">
+        <span id="themeIcon">🌙</span>
+    </button>
+
     <div class="container">
         <h1>Calculadora de Costos Logísticos</h1>
         
@@ -62,5 +67,20 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
     <script src="app.js"></script> <!-- Archivo JS con la lógica -->
+    <script>
+        // Función para alternar el tema entre oscuro y claro
+        function toggleTheme() {
+            const body = document.body;
+            const themeIcon = document.getElementById("themeIcon");
+            body.classList.toggle("light-mode");
+
+            // Cambia el icono entre sol y luna
+            if (body.classList.contains("light-mode")) {
+                themeIcon.textContent = "☀️"; // Sol para el modo claro
+            } else {
+                themeIcon.textContent = "🌙"; // Luna para el modo oscuro
+            }
+        }
+    </script>
 </body>
 </html>
