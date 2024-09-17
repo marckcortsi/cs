@@ -35,7 +35,7 @@ body.light-mode .theme-toggle {
 
 /* Contenedor principal */
 .container {
-    max-width: 400px;
+    max-width: 90%;
     margin: 50px auto;
     padding: 20px;
     background-color: #1a1a1a; /* Fondo ligeramente más claro */
@@ -50,24 +50,12 @@ body.light-mode .container {
     background-color: #ffffff;
 }
 
-/* Animación de entrada suave */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 /* Estilo del título */
 h1 {
     text-align: center;
     color: #ffffff; /* Color del texto por defecto (oscuro) */
     font-weight: 600;
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin-bottom: 20px;
     animation: fadeIn 1.5s ease-in-out; /* Animación de entrada */
     transition: color 0.3s ease;
@@ -90,7 +78,8 @@ body.light-mode h1 {
 .search-box input[type="text"] {
     padding: 12px;
     width: 100%;
-    border: 2px solid #333;
+    max-width: 400px;
+    border: 2px solid #004080; /* Azul oscuro */
     background-color: #333333; /* Fondo oscuro */
     color: #ffffff; /* Texto claro */
     border-radius: 8px;
@@ -100,7 +89,7 @@ body.light-mode h1 {
     animation: fadeInUp 1.5s ease-in-out; /* Animación de entrada */
 }
 
-/* Tema claro para el input */
+/* Tema claro para el cuadro de texto */
 body.light-mode .search-box input[type="text"] {
     background-color: #ffffff; /* Fondo claro */
     color: #333; /* Texto oscuro */
@@ -115,6 +104,7 @@ body.light-mode .search-box input[type="text"] {
 /* Botones */
 .search-box button {
     width: 100%;
+    max-width: 400px;
     padding: 12px 20px;
     background-color: #004080; /* Azul de la tabla */
     color: white;
@@ -133,67 +123,10 @@ body.light-mode .search-box input[type="text"] {
     box-shadow: 0px 8px 15px rgba(0, 64, 128, 0.3); /* Sombra azul animada */
 }
 
-/* Botón de regresar */
-button.regresar {
-    width: 100%;
-    padding: 12px 20px;
-    background-color: #ff4d4d; /* Rojo */
-    color: white;
-    border: none;
-    margin-top: 10px;
-    border-radius: 8px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    animation: fadeInUp 1.7s ease-in-out;
-}
-
-button.regresar:hover {
-    background-color: #e60000; /* Rojo oscuro en hover */
-    transform: translateY(-3px);
-    box-shadow: 0px 8px 15px rgba(255, 77, 77, 0.3);
-}
-
-/* Loader estilo */
-.loader {
-    border: 6px solid #333333;
-    border-radius: 50%;
-    border-top: 6px solid #004080; /* Azul de la tabla */
-    width: 40px;
-    height: 40px;
-    animation: spin 1s linear infinite, fadeInUp 1s ease-in-out; /* Animación de entrada y rotación */
-    margin: 20px auto;
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Mensaje de estado */
-.status-message {
-    text-align: center;
-    color: #ff4d4d;
-    font-weight: bold;
-    margin-top: 20px;
-    animation: fadeIn 2s ease-in-out;
-}
-
 /* Contenedor responsivo para la tabla */
 .table-container {
     width: 100%;
-    overflow-x: auto;
+    overflow-x: auto; /* Permite desplazamiento horizontal si la tabla es más ancha que la pantalla */
     margin-top: 20px;
     animation: fadeInUp 1.8s ease-in-out; /* Animación de entrada */
 }
@@ -202,7 +135,7 @@ button.regresar:hover {
 table {
     width: 100%;
     border-collapse: collapse;
-    min-width: 800px;
+    min-width: 800px; /* Tamaño mínimo para que la tabla mantenga sus proporciones */
     color: #ffffff; /* Texto blanco en la tabla por defecto */
     transition: color 0.3s ease;
 }
@@ -267,7 +200,7 @@ body.light-mode .calculator-box {
 .calculator-box input {
     padding: 10px;
     width: 100%;
-    max-width: 350px;
+    max-width: 400px;
     border: 2px solid #444;
     border-radius: 25px;
     background-color: #3a3a3a;
@@ -325,9 +258,43 @@ body.light-mode .calculator-box button:hover {
     .container {
         width: 90%;
     }
-    
+
+    .search-box input[type="text"],
+    .search-box button,
+    .calculator-box input,
+    .calculator-box button {
+        max-width: 100%;
+        font-size: 14px;
+    }
+
     table {
-        min-width: 600px; /* Para pantallas más pequeñas */
+        min-width: 100%; /* Permite que la tabla se ajuste al ancho de la pantalla */
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .table-container {
+        overflow-x: auto;
     }
 }
 
+/* Media query para pantallas muy pequeñas, como móviles */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.2rem;
+    }
+
+    .container {
+        width: 95%;
+    }
+
+    .search-box input[type="text"],
+    .search-box button,
+    .calculator-box input,
+    .calculator-box button {
+        padding: 10px;
+        font-size: 12px;
+    }
+}
