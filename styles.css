@@ -188,6 +188,64 @@ table tbody tr:hover {
     transition: background-color 0.3s ease;
 }
 
+/* Estilo de la calculadora */
+.calculator-box {
+    background-color: #1a1a1a;
+    padding: 25px;
+    border-radius: 10px;
+    margin-top: 30px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    animation: fadeIn 1.5s ease-in-out; /* Animación de entrada */
+}
+
+.calculator-box label {
+    display: block;
+    color: #f5f5f5;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.calculator-box input {
+    padding: 10px;
+    width: 100%;
+    max-width: 350px;
+    border: 2px solid #444;
+    border-radius: 25px;
+    background-color: #3a3a3a;
+    color: #f5f5f5;
+    margin-bottom: 20px;
+    font-size: 16px;
+    transition: border 0.3s ease;
+    outline: none;
+}
+
+.calculator-box input:focus {
+    border-color: #00ff7f;
+}
+
+.calculator-box button {
+    padding: 12px 25px;
+    background-color: #00ff7f;
+    color: black;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.calculator-box button:hover {
+    background-color: #00cc66;
+    box-shadow: 0px 4px 10px rgba(0, 255, 127, 0.3);
+}
+
+.calculator-box p {
+    color: #f5f5f5;
+    font-size: 18px;
+    font-weight: bold;
+}
+
 /* Media queries para pantallas pequeñas */
 @media (max-width: 768px) {
     .container {
