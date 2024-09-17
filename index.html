@@ -45,8 +45,24 @@
                 </tbody>
             </table>
         </div>
+
+        <!-- Calculadora de logística -->
+        <div class="calculator-box">
+            <label for="cantidadCajas">Cantidad de Cajas:</label>
+            <input type="number" id="cantidadCajas" placeholder="Cantidad de cajas" min="1">
+            <button onclick="generarCamposPeso()">Generar Campos de Peso</button>
+
+            <div id="pesosCajas">
+                <!-- Aquí se generarán los campos de peso para cada caja -->
+            </div>
+
+            <button onclick="calcularCosto()">Calcular Costo</button>
+
+            <p id="costoTotal">Costo total: $0</p>
+        </div>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
     <script src="app.js"></script> <!-- Archivo JS con la lógica -->
 </body>
 </html>
