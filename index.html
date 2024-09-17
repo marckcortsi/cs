@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de Costos Logísticos</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Archivo CSS con estilos actualizados -->
+    <link rel="stylesheet" href="styles.css"> <!-- Archivo CSS con estilos -->
 </head>
 <body>
     <!-- Botón de cambio de tema día/noche -->
@@ -67,6 +67,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
     <script src="app.js"></script> <!-- Archivo JS con la lógica -->
+
     <script>
         // Función para alternar el tema entre oscuro y claro
         function toggleTheme() {
@@ -81,6 +82,19 @@
                 themeIcon.textContent = "🌙"; // Luna para el modo oscuro
             }
         }
+
+        // Función para ocultar el botón de cambio de tema automáticamente después de 5 segundos
+        function hideThemeToggle() {
+            const themeToggle = document.getElementById("themeToggle");
+            setTimeout(() => {
+                themeToggle.style.display = 'none'; // Oculta el botón completamente
+            }, 5000); // 5 segundos
+        }
+
+        // Inicia la función de ocultar el botón cuando la página se carga
+        window.onload = function() {
+            hideThemeToggle();
+        };
     </script>
 </body>
 </html>
